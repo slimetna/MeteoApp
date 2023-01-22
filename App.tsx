@@ -1,11 +1,17 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Appearance, View } from "react-native";
+import {
+  StyleSheet,
+  Appearance,
+  View,
+  TouchableWithoutFeedback,
+  Keyboard,
+} from "react-native";
 import * as Location from "expo-location";
 import React, { useState, useEffect } from "react";
 import { ActivityIndicator } from "react-native";
 import axios from "axios";
 import CurrentWeather from "./components/CurrentWeather";
 import Forecasts from "./components/Forecasts";
+import Search from "./components/Search";
 
 const API_URL = (lat: string, lon: string) =>
   `https://api.openweathermap.org/data/2.5/forecast?lat=${lat}&lon=${lon}&appid=04053c4c86d3f32ca43eaeb865e1c17c&lang=en&units=metric`;
@@ -53,6 +59,7 @@ export default function App() {
 
   return (
     <View style={styles.container}>
+      <Search setData={setData} />
       <CurrentWeather data={data} />
       <Forecasts data={data} />
     </View>

@@ -36,9 +36,9 @@ export default function CurrentWeather({ data }: any) {
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: 120,
+    marginTop: 40,
     alignItems: "center",
-    height: "55%",
+    height: "52.5%",
   },
   city: {
     color: "#fff",
